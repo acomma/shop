@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 
 @RestController
 @RequestMapping("/orders")
@@ -54,7 +56,9 @@ public class OrderController {
     }
 
     private String getServiceUrl(String serviceName) {
-        ServiceInstance serviceInstance = discoveryClient.getInstances(serviceName).get(0);
+        List<ServiceInstance> instances = discoveryClient.getInstances(serviceName);
+        int index = new Random().nextInt(instances.size());
+        ServiceInstance serviceInstance = instances.get(index);
         String url = serviceInstance.getHost() + ":" + serviceInstance.getPort();
         log.info("请求地址：{}", url);
         return url;
