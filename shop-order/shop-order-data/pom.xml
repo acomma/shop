@@ -18,6 +18,16 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
+            <groupId>me.acomma.shop</groupId>
+            <artifactId>shop-user-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.acomma.shop</groupId>
+            <artifactId>shop-product-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>

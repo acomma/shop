@@ -1,6 +1,7 @@
 package me.acomma.shop.product.web.controller;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import me.acomma.shop.product.api.vo.ProductVO;
 import me.acomma.shop.product.core.service.ProductService;
 import me.acomma.shop.product.data.po.ProductPO;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/products")
 @RequiredArgsConstructor
+@Slf4j
 public class ProductController {
     private final ProductService productService;
 
@@ -22,6 +24,8 @@ public class ProductController {
 
         ProductVO vo = new ProductVO();
         BeanUtils.copyProperties(po, vo);
+
+        log.info("获取到商品信息：{}", vo);
 
         return vo;
     }
