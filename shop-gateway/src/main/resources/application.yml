@@ -14,28 +14,6 @@ spring:
             allowedOrigins: "*"
             allowedMethods: "*"
             allowedHeaders: "*"
-      routes:
-        - id: user-gateway
-          uri: lb://shop-user
-          order: 1
-          predicates:
-            - Path=/shop-user/**
-          filters:
-            - StripPrefix=1
-        - id: product-gateway
-          uri: lb://shop-product
-          order: 1
-          predicates:
-            - Path=/shop-product/**
-          filters:
-            - StripPrefix=1
-        - id: order-gateway
-          uri: lb://shop-order
-          order: 1
-          predicates:
-            - Path=/shop-order/**
-          filters:
-            - StripPrefix=1
     nacos:
       server-addr: 127.0.0.1:8848
 
