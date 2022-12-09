@@ -1,2 +1,36 @@
 server:
   port: 8080
+spring:
+  application:
+    name: shop-gateway
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+        - id: user-gateway
+          uri: http://127.0.0.1:8081
+          order: 1
+          predicates:
+            - Path=/shop-user/**
+          filters:
+            - StripPrefix=1
+        - id: product-gateway
+          uri: http://127.0.0.1:8082
+          order: 1
+          predicates:
+            - Path=/shop-product/**
+          filters:
+            - StripPrefix=1
+        - id: order-gateway
+          uri: http://127.0.0.1:8083
+          order: 1
+          predicates:
+            - Path=/shop-order/**
+          filters:
+            - StripPrefix=1
+
