@@ -5,6 +5,9 @@ spring:
     name: shop-gateway
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
       globalcors:
         cors-configurations:
           '[/**]':
@@ -13,24 +16,26 @@ spring:
             allowedHeaders: "*"
       routes:
         - id: user-gateway
-          uri: http://127.0.0.1:8081
+          uri: lb://shop-user
           order: 1
           predicates:
             - Path=/shop-user/**
           filters:
             - StripPrefix=1
         - id: product-gateway
-          uri: http://127.0.0.1:8082
+          uri: lb://shop-product
           order: 1
           predicates:
             - Path=/shop-product/**
           filters:
             - StripPrefix=1
         - id: order-gateway
-          uri: http://127.0.0.1:8083
+          uri: lb://shop-order
           order: 1
           predicates:
             - Path=/shop-order/**
           filters:
             - StripPrefix=1
+    nacos:
+      server-addr: 127.0.0.1:8848
 
