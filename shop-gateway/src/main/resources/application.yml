@@ -1,19 +1,16 @@
-server:
-  port: 8080
 spring:
   application:
     name: shop-gateway
   cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedMethods: "*"
-            allowedHeaders: "*"
     nacos:
+      config:
+        file-extension: yaml
+        group: GATEWAY_GROUP
+        namespace: ${spring.profiles.active}
+      discovery:
+        namespace: ${spring.profiles.active}
       server-addr: 127.0.0.1:8848
-
+  config:
+    import: nacos:shop-gateway.yaml
+  profiles:
+    active: dev

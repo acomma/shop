@@ -1,13 +1,16 @@
-server:
-  port: 8083
 spring:
   application:
     name: shop-order
   cloud:
     nacos:
+      config:
+        file-extension: yaml
+        group: ORDER_GROUP
+        namespace: ${spring.profiles.active}
+      discovery:
+        namespace: ${spring.profiles.active}
       server-addr: 127.0.0.1:8848
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/shop_order?characterEncoding=UTF-8&serverTimezone=GMT%2B8
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: 123456
+  config:
+    import: nacos:shop-order.yaml
+  profiles:
+    active: dev
