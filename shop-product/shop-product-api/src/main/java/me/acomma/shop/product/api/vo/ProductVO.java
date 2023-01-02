@@ -20,7 +20,7 @@ public class ProductVO implements Serializable {
     @Serial
     private static final long serialVersionUID = -5457813329859632009L;
 
-    private Long productId;
+    private Long id;
 
     private String name;
 

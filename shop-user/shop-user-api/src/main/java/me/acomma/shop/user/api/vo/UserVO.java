@@ -20,7 +20,7 @@ public class UserVO implements Serializable {
     @Serial
     private static final long serialVersionUID = -3124545673883575870L;
 
-    private Long userId;
+    private Long id;
 
     private String name;
 }

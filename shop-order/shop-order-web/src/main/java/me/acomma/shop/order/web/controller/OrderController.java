@@ -45,7 +45,7 @@ public class OrderController {
         orderService.save(po);
 
         AddOrderVO vo = new AddOrderVO();
-        vo.setOrderId(po.getOrderId());
+        vo.setOrderId(po.getId());
 
         return vo;
     }

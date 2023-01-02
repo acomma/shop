@@ -24,8 +24,8 @@ public class OrderPO implements Serializable {
     @Serial
     private static final long serialVersionUID = 4184962856302722159L;
 
-    @TableId(value = "order_id", type = IdType.AUTO)
-    private Long orderId;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
 
     private Long userId;
 

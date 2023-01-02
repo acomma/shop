@@ -24,8 +24,8 @@ public class ProductPO implements Serializable {
     @Serial
     private static final long serialVersionUID = -396510113249552548L;
 
-    @TableId(value = "product_id", type = IdType.AUTO)
-    private Long productId;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
 
     private String name;
 

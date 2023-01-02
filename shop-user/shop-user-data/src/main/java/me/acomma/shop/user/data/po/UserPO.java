@@ -24,8 +24,8 @@ public class UserPO implements Serializable {
     @Serial
     private static final long serialVersionUID = 821950682101349236L;
 
-    @TableId(value = "user_id", type = IdType.AUTO)
-    private Long userId;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
 
     private String name;
 }

@@ -3,9 +3,9 @@ CREATE DATABASE `shop_order` DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8m
 USE `shop_order`;
 
 CREATE TABLE `order` (
-  `order_id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '订单ID',
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `user_id` bigint NOT NULL COMMENT '用户ID',
   `product_id` bigint NOT NULL COMMENT '商品ID',
   `quantity` int NOT NULL COMMENT '购买数量',
-  PRIMARY KEY (`order_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin COMMENT='订单';
