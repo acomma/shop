@@ -25,7 +25,7 @@ public class ProductController {
         ProductVO vo = new ProductVO();
         BeanUtils.copyProperties(po, vo);
 
-        log.info("获取到商品信息：{}", vo);
+        log.info("获取商品信息：{}", vo);
 
         return vo;
     }

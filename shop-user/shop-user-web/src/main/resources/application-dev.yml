@@ -1,3 +1,7 @@
+#logging:
+#  file:
+#    name: ${logging.file.path}/shop-user.log
+#    path: /var/log/shop
 #server:
 #  port: 8081
 #spring:

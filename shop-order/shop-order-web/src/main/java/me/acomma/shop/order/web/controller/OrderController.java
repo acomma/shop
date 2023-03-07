@@ -39,6 +39,8 @@ public class OrderController {
             throw new RuntimeException("商品不存在");
         }
 
+        log.info("添加订单信息");
+
         OrderPO po = new OrderPO();
         BeanUtils.copyProperties(dto, po);
 

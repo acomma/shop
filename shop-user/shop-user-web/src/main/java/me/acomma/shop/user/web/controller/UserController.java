@@ -25,7 +25,7 @@ public class UserController {
         UserVO vo = new UserVO();
         BeanUtils.copyProperties(po, vo);
 
-        log.info("获取到用户信息：{}", vo);
+        log.info("获取用户信息：{}", vo);
 
         return vo;
     }
