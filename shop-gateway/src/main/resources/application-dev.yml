@@ -16,3 +16,6 @@
 #            allowedOrigins: "*"
 #            allowedMethods: "*"
 #            allowedHeaders: "*"
+#  zipkin:
+#    base-url: http://zipkin:9411
+#    discovery-client-enabled: false

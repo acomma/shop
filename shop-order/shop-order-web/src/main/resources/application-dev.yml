@@ -10,3 +10,6 @@
 #    driver-class-name: com.mysql.cj.jdbc.Driver
 #    username: root
 #    password: 123456
+#  zipkin:
+#    base-url: http://zipkin:9411
+#    discovery-client-enabled: false
