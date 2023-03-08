@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+  user-web:
+    container_name: shop-user-web
+    image: acomma/shop-user-web:0.0.1-SNAPSHOT
+    networks:
+      - shop-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+  product-web:
+    container_name: shop-product-web
+    image: acomma/shop-product-web:0.0.1-SNAPSHOT
+    networks:
+      - shop-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+  order-web:
+    container_name: shop-order-web
+    image: acomma/shop-order-web:0.0.1-SNAPSHOT
+    networks:
+      - shop-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+  gateway:
+    container_name: shop-gateway
+    image: acomma/shop-gateway:0.0.1-SNAPSHOT
+    ports:
+      - "8080:8080"
+    networks:
+      - shop-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+networks:
+  shop-network:
+    external: true
