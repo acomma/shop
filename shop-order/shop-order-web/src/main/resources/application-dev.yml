@@ -10,6 +10,10 @@
 #    driver-class-name: com.mysql.cj.jdbc.Driver
 #    username: root
 #    password: 123456
+#management:
+#  tracing:
+#    sampling:
+#      probability: 1.0
 #  zipkin:
-#    base-url: http://zipkin:9411
-#    discovery-client-enabled: false
+#    tracing:
+#      endpoint: http://zipkin:9411/api/v2/spans
